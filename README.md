@@ -31,3 +31,12 @@ gosync parse --config ./gosync.example.yaml
 # Sync a file with a specific configuration path
 gosync sync
 ```
+
+## Development
+
+### Pushing a new release
+
+```
+git tag vXX.XX.XX
+git push --tags
+```
