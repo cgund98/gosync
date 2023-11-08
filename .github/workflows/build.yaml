@@ -1,4 +1,4 @@
-name: Go
+name: Validate Build
 on: [push]
 
 jobs:
@@ -15,7 +15,3 @@ jobs:
         run: go mod download
       - name: Build
         run: go build -o gosync ./cmd
-      - uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: ./gosync
