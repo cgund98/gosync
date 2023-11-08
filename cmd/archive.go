@@ -89,9 +89,9 @@ func runArchiveCmd(cmd *cobra.Command, args []string) {
 		fmt.Println()
 
 		// Cleanup zipfile
-		// if err := os.Remove(stageFile); err != nil {
-		// 	log.Fatalf("unable to delete zipfile: %v", err)
-		// }
+		if err := os.Remove(stageFile); err != nil {
+			log.Fatalf("unable to delete zipfile: %v", err)
+		}
 
 		// Cleanup stage directory
 		if err := os.RemoveAll(stageDir); err != nil {
