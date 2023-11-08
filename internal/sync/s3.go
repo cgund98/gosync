@@ -6,7 +6,7 @@ import (
 )
 
 func SyncToS3(source, destination string, excludePatterns []string) {
-	args := []string{"s3", "sync", source, destination}
+	args := []string{"s3", "sync", source, destination, "--storage-class", "INTELLIGENT_TIERING"}
 
 	for _, pattern := range excludePatterns {
 		args = append(args, "--exclude")
