@@ -1,0 +1,24 @@
+global:
+  exclude_patterns:
+    - "*.tdl" # Exclude a file extension
+    - "*.blend1"
+    - "**/*bak*.hdalc"
+    - "**/*bak*.hiplc"
+
+backups:
+  ext_test:
+    source: "/home/callum/art/assets/06_hdri/"
+    destinations:
+      - path: "/tmp/hdri"
+        type: "local"
+      - path: "s3://cg-media-backup/test/hdri"
+        type: "s3"
+
+  ext_test2:
+    source: "/home/callum/art/projects/019_cowboy_sunset/02_assets/01_canteen/02_model/"
+    destinations:
+      - path: "/tmp/model"
+        type: "local"
+      - path: "s3://cg-media-backup/test/model"
+        type: "s3"
+    exclude_patterns:
