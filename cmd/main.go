@@ -18,6 +18,7 @@ func init() {
 	// Commands
 	rootCmd.AddCommand(parseCmd)
 	rootCmd.AddCommand(syncCmd)
+	rootCmd.AddCommand(archiveCmd)
 
 	// Flags
 	rootCmd.PersistentFlags().String(flagConfig, "", "config file (default is $HOME/.gosync.yaml)")

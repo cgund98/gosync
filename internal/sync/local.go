@@ -3,6 +3,8 @@ package sync
 import (
 	"fmt"
 	"log"
+
+	"github.com/cgund98/gosync/internal/shell"
 )
 
 func SyncToLocal(source, destination string, excludePatterns []string) {
@@ -18,7 +20,7 @@ func SyncToLocal(source, destination string, excludePatterns []string) {
 
 	fmt.Printf("rsync '%s' => '%s'\n", source, destination)
 
-	if err := runCmd("rsync", args...); err != nil {
+	if err := shell.RunCmd("rsync", args...); err != nil {
 		log.Fatalf("command finished with error: %v", err)
 	}
 }

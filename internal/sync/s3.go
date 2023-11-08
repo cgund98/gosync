@@ -3,6 +3,8 @@ package sync
 import (
 	"fmt"
 	"log"
+
+	"github.com/cgund98/gosync/internal/shell"
 )
 
 func SyncToS3(source, destination string, excludePatterns []string) {
@@ -14,7 +16,7 @@ func SyncToS3(source, destination string, excludePatterns []string) {
 	}
 	fmt.Printf("aws s3 sync '%s' => '%s'\n", source, destination)
 
-	if err := runCmd("aws", args...); err != nil {
+	if err := shell.RunCmd("aws", args...); err != nil {
 		log.Fatalf("command finished with error: %v", err)
 	}
 }
